@@ -41,6 +41,13 @@ export const Banner = () => {
         }
     }
 
+    const handleConnectClick = () => {
+        const contactSection = document.getElementById('connect');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <section id="home" className="banner">
             <Container>
@@ -49,9 +56,7 @@ export const Banner = () => {
                         <span className="tagline">Welcome to my Personal Website!</span>
                         <h1>{`Hi I'm Jason Sun `}<br></br><span>I'm </span><span className="wrap"> {text}</span><span className="Cursor">|</span></h1>
                         <p>I’m a passionate technology enthusiast with an unquenchable curiosity for exploring the latest innovations and advancements. My drive to learn is matched only by my commitment to excellence, as I continuously strive to produce high-quality outcomes in every project I undertake. Whether it’s diving into new tools, mastering cutting-edge techniques, or staying ahead of industry trends, I am dedicated to pushing boundaries and achieving the best possible results.</p>
-                        <button onClick={() => {
-                            console.log("connect")
-                        }}>Let's Connect! <ArrowRightCircle size={25}></ArrowRightCircle></button>
+                        <button onClick={handleConnectClick}>Let's Connect! <ArrowRightCircle size={25}></ArrowRightCircle></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
                         <img className="self-img" src={selfImg} alt="Self Img" />

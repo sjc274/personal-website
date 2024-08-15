@@ -27,6 +27,14 @@ export const NavBar = () => {
         setActiveLink(value);
     }
 
+    const handleConnectClick = () => {
+        onUpdateActiveLink('connect');
+        const contactSection = document.getElementById('connect');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled" : ""}> 
             <Container>
@@ -46,7 +54,7 @@ export const NavBar = () => {
                             <a href="https://github.com/sjc274"><img className="github-icon" src={navIcon2} alt="GitHub" /></a>
                             <a href="https://www.instagram.com/jiachen1789/"><img src={navIcon3} alt="Instagram" /></a>
                         </div>
-                        <button className="vvd" onClick={() => console.log("connect")}><span>Let's Connect</span></button>
+                        <button className="vvd" onClick={handleConnectClick}><span>Let's Connect</span></button>
                     </span>
                 </Navbar.Collapse>
             </Container>
